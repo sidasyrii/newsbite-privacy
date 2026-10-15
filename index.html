@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - NewsBite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #0B0F17;
+            --bg-card: rgba(18, 24, 38, 0.7);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --primary: #10B981;
+            --primary-glow: rgba(16, 185, 129, 0.25);
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --accent: #3B82F6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+        }
+
+        header {
+            padding: 2.5rem 1.5rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-card);
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, #FFFFFF 0%, #A5B4FC 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .effective-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        main {
+            max-width: 880px;
+            margin: 2.5rem auto 4rem;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        .intro-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .intro-box p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(8px);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .section-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .icon-box {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--primary);
+            font-size: 1.15rem;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            font-size: 0.975rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.75rem 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .badge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .badge-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.1rem;
+        }
+
+        .badge-title {
+            font-weight: 600;
+            color: #FFFFFF;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+
+        .badge-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-top: 1px solid var(--border-card);
+            color: #6B7280;
+            font-size: 0.85rem;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-badge">
+            <span class="pulse-dot"></span>
+            NewsBite • Global News & Reader
+        </div>
+        <h1>Privacy Policy</h1>
+        <div class="effective-date">Effective Date: October 15, 2026 | Last Updated: October 15, 2026</div>
+    </header>
+
+    <main>
+        <div class="intro-box">
+            <p>
+                Welcome to <strong>NewsBite</strong> (referred to as "NewsBite", "we", "us", or "our"). We are committed to transparency, user autonomy, and protecting your privacy. This Privacy Policy details the types of information we process, how data is handled across our news aggregation and community reporting services, and how we strictly comply with Google Play Developer Policies and global data privacy regulations (including GDPR and CCPA).
+            </p>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="icon-box">📰</div>
+                <h2>1. Service Overview & Purpose</h2>
+            </div>
+            <p>
+                NewsBite provides real-time curated global journalism across technology, science, business, world affairs, and culture. The app features:
+            </p>
+            <ul>
+                <li><strong>Public News Feed:</strong> Breaking news articles curated from verified global feeds and AI-assisted summaries powered by Gemini.</li>
+                <li><strong>Community News Desk:</strong> An optional eyewitness submission portal allowing readers to contribute breaking stories, local event updates, and citizen reports to the editorial team.</li>
+                <li><strong>Encrypted Contributor Communications:</strong> Secure end-to-end authenticated channels allowing verified journalists and contributors to correspond with editorial desks without unencrypted third-party surveillance.</li>
+            </ul>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="icon-box">📱</div>
+                <h2>2. Device Permissions & Transparent Disclosure</h2>
+            </div>
+            <p>
+                In strict accordance with Google Play's User Data & Prominent Disclosure Policies, NewsBite accesses device hardware features <strong>only when triggered by direct user interaction</strong> in specific user-facing capabilities:
+            </p>
+
+            <div class="badge-grid">
+                <div class="badge-card">
+                    <span class="badge-title">📷 Camera (CAMERA)</span>
+                    <span class="badge-desc">Allows you to take eyewitness photos to attach to breaking news stories in the Community News Desk, or capture a profile avatar. Never accessed in the background.</span>
+                </div>
+                <div class="badge-card">
+                    <span class="badge-title">🖼️ Media Files (READ_MEDIA_IMAGES)</span>
+                    <span class="badge-desc">Enables you to select existing pictures or press materials from your device photo gallery to submit alongside community news reports.</span>
+                </div>
+                <div class="badge-card">
+                    <span class="badge-title">🔔 Notifications (POST_NOTIFICATIONS)</span>
+                    <span class="badge-desc">Sends critical breaking news headlines, curated editorial updates, and community discussion reply notices. Can be customized or toggled off at any time in system settings.</span>
+                </div>
+                <div class="badge-card">
+                    <span class="badge-title">🌐 Network Access (INTERNET)</span>
+                    <span class="badge-desc">Used to retrieve the latest real-time news articles from verified public RSS and news providers, and synchronize community discussion boards.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="icon-box">🛡️</div>
+                <h2>3. Data Protection & Security Architecture</h2>
+            </div>
+            <p>
+                Our backend infrastructure is engineered with industry-standard encryption standards:
+            </p>
+            <ul>
+                <li><strong>Transport Security:</strong> All client-server traffic is encrypted using TLS 1.3 (HTTPS / Secure WebSockets).</li>
+                <li><strong>Encrypted Communications:</strong> Real-time peer audio/video calls use WebRTC with Datagram Transport Layer Security (DTLS) and Secure Real-time Transport Protocol (SRTP).</li>
+                <li><strong>Zero Data Selling:</strong> We do not sell, rent, monetize, or broker personal user information, reading history, or contact data to third-party ad networks or data brokers.</li>
+            </ul>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section-card" id="account-deletion">
+            <div class="section-header">
+                <div class="icon-box">🗂️</div>
+                <h2>4. Account & Data Deletion Policy (Google Play Compliance)</h2>
+            </div>
+            <p>
+                You maintain complete ownership and control over your personal data. In full compliance with Google Play User Data policies:
+            </p>
+            <ul>
+                <li><strong>In-App Account Deletion:</strong> You can delete your account and all associated profile records directly within the app at any time by going to <em>Profile &gt; Settings &gt; Delete Account</em>. Deletion takes effect immediately.</li>
+                <li><strong>Web-Based Account Deletion Request:</strong> If you no longer have the app installed, you can submit an account and personal data deletion request by emailing <a href="mailto:privacy@newsbite.app?subject=Account%20and%20Data%20Deletion%20Request">privacy@newsbite.app</a> with the subject line <em>"Account Deletion Request"</em> from your registered email address.</li>
+                <li><strong>Data Retention & Purge Timeline:</strong> Upon receiving an account deletion request, all personal identifiers (email, username, avatar), conversation history, and uploaded news media are permanently purged from our servers within 14 calendar days. No residual telemetry or backup data is retained.</li>
+                <li><strong>Local Cache Clearing:</strong> You can purge all cached articles, bookmarks, and temporary data at any time via Settings &gt; Clear Application Cache.</li>
+            </ul>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="icon-box">👶</div>
+                <h2>5. Children's Privacy (COPPA Compliance)</h2>
+            </div>
+            <p>
+                NewsBite is designed for general audiences and is not directed at children under the age of 13. We do not knowingly collect, request, or solicit personally identifiable information from children. If we discover that a child under 13 has provided personal information, we will delete it promptly.
+            </p>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="icon-box">⚖️</div>
+                <h2>6. Google Play Policy Compliance Statement</h2>
+            </div>
+            <p>
+                NewsBite adheres strictly to Google Play Developer Distribution Agreement standards:
+            </p>
+            <ul>
+                <li>All software updates are delivered exclusively via the official Google Play Store update channels for production releases.</li>
+                <li>No device settings or security configurations are modified without explicit user consent.</li>
+                <li>No background actions violate battery management or user-selected permissions.</li>
+            </ul>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="icon-box">✉️</div>
+                <h2>7. Contact & Privacy Inquiries</h2>
+            </div>
+            <p>
+                If you have questions, feedback, or concerns regarding this Privacy Policy or your data protection rights, please contact our Data Protection Officer:
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>Application:</strong> NewsBite (com.newsbite.globalnews)<br>
+                <strong>Developer:</strong> NewsBite Editorial Team<br>
+                <strong>Email:</strong> <a href="mailto:privacy@newsbite.app">privacy@newsbite.app</a><br>
+                <strong>Compliance Desk:</strong> support@newsbite.app
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 NewsBite. All rights reserved. Compliant with Google Play Developer Program Policies.
+    </footer>
+
+</body>
+</html>
